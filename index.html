@@ -58,6 +58,12 @@
       text-decoration: none;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
     .nav-links {
       display: flex;
       gap: 36px;
@@ -76,6 +82,40 @@
 
     .nav-links a:hover { color: var(--gold); }
 
+    /* ─── LANG TOGGLE ─── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(201, 160, 80, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 2px;
+    }
+
+    .lang-btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 5px 10px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 1px;
+      transition: background 150ms, color 150ms;
+    }
+
+    .lang-btn.active {
+      background: var(--gold);
+      color: #0a0a0a;
+    }
+
+    .lang-btn:not(.active):hover {
+      color: var(--gold);
+    }
+
     /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
@@ -93,12 +133,10 @@
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(201, 160, 80, 0.07) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(201, 160, 80, 0.07) 0%, transparent 70%);
       pointer-events: none;
     }
 
-    /* SVG Logo */
     .logo-wrap {
       margin-bottom: 40px;
       animation: fadeUp 1s ease both;
@@ -111,9 +149,11 @@
       filter: drop-shadow(0 0 24px rgba(201, 160, 80, 0.2));
     }
 
-    .logo-svg {
-      width: 130px;
-      height: 130px;
+    /* SVG fallback shown when logo.jpg is missing */
+    .logo-svg-fallback {
+      display: none;
+      width: 140px;
+      height: 140px;
     }
 
     @keyframes fadeUp {
@@ -260,13 +300,11 @@
       margin-bottom: 64px;
     }
 
-    .services-header .section-line {
-      margin: 24px auto;
-    }
+    .services-header .section-line { margin: 24px auto; }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2px;
     }
 
@@ -289,11 +327,7 @@
       transition: opacity 300ms;
     }
 
-    .service-card:hover {
-      border-color: rgba(201, 160, 80, 0.45);
-      background: #1a1a1a;
-    }
-
+    .service-card:hover { border-color: rgba(201, 160, 80, 0.45); background: #1a1a1a; }
     .service-card:hover::before { opacity: 1; }
 
     .service-icon {
@@ -318,9 +352,7 @@
     }
 
     /* ─── ABOUT ─── */
-    #about {
-      background: var(--bg);
-    }
+    #about { background: var(--bg); }
 
     .about-inner {
       display: grid;
@@ -357,7 +389,6 @@
     }
 
     .about-visual {
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -382,24 +413,9 @@
       border-radius: 50%;
     }
 
-    .about-ring-text {
-      font-family: 'Cormorant', serif;
-      text-align: center;
-    }
-
-    .about-ring-num {
-      font-size: 5rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .about-ring-label {
-      font-size: 0.9rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
+    .about-ring-text { font-family: 'Cormorant', serif; text-align: center; }
+    .about-ring-num { font-size: 5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .about-ring-label { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
 
     /* ─── GUARANTEE STRIP ─── */
     .guarantee {
@@ -419,18 +435,9 @@
       flex-wrap: wrap;
     }
 
-    .guarantee-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    .guarantee-item { display: flex; align-items: center; gap: 16px; }
 
-    .guarantee-icon {
-      width: 36px;
-      height: 36px;
-      color: var(--gold);
-      flex-shrink: 0;
-    }
+    .guarantee-icon { width: 36px; height: 36px; color: var(--gold); flex-shrink: 0; }
 
     .guarantee-text strong {
       display: block;
@@ -441,10 +448,7 @@
       text-transform: uppercase;
     }
 
-    .guarantee-text span {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
+    .guarantee-text span { font-size: 0.75rem; color: var(--text-muted); }
 
     /* ─── LOCATION ─── */
     #location { background: var(--bg-2); }
@@ -465,19 +469,9 @@
       gap: 24px;
     }
 
-    .location-row {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
+    .location-row { display: flex; gap: 16px; align-items: flex-start; }
 
-    .location-row-icon {
-      width: 20px;
-      height: 20px;
-      color: var(--gold);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .location-row-icon { width: 20px; height: 20px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
 
     .location-row-text strong {
       display: block;
@@ -489,7 +483,7 @@
       margin-bottom: 4px;
     }
 
-    .location-row-text span {
+    .location-row-text span, .location-row-text a {
       font-size: 0.9rem;
       color: var(--text);
       line-height: 1.6;
@@ -499,7 +493,6 @@
       border: 1px solid var(--border);
       overflow: hidden;
       height: 400px;
-      position: relative;
     }
 
     .map-wrap iframe {
@@ -510,22 +503,10 @@
     }
 
     /* ─── CONTACT ─── */
-    #contact {
-      background: var(--bg);
-      text-align: center;
-    }
+    #contact { background: var(--bg); text-align: center; }
 
-    .contact-body {
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .contact-body p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin: 20px 0 40px;
-      line-height: 1.8;
-    }
+    .contact-body { max-width: 560px; margin: 0 auto; }
+    .contact-body p { font-size: 0.9rem; color: var(--text-muted); margin: 20px 0 40px; line-height: 1.8; }
 
     .wa-btn {
       display: inline-flex;
@@ -541,7 +522,6 @@
       text-transform: uppercase;
       text-decoration: none;
       transition: background 200ms, transform 150ms, box-shadow 200ms;
-      box-shadow: 0 0 0 0 rgba(201, 160, 80, 0.4);
       cursor: pointer;
     }
 
@@ -551,10 +531,7 @@
       box-shadow: 0 8px 32px rgba(201, 160, 80, 0.25);
     }
 
-    .wa-btn svg {
-      width: 20px;
-      height: 20px;
-    }
+    .wa-btn svg { width: 20px; height: 20px; }
 
     /* ─── FOOTER ─── */
     footer {
@@ -582,11 +559,7 @@
       text-transform: uppercase;
     }
 
-    .footer-copy {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-    }
+    .footer-copy { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.05em; }
 
     /* ─── MOBILE NAV TOGGLE ─── */
     .nav-toggle {
@@ -599,13 +572,7 @@
       border: none;
     }
 
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--gold);
-      transition: all 200ms;
-    }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); transition: all 200ms; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
@@ -625,50 +592,31 @@
       }
 
       .nav-links.open { display: flex; }
-
-      .nav-links a {
-        font-size: 1rem;
-        letter-spacing: 0.2em;
-      }
-
+      .nav-links a { font-size: 1rem; letter-spacing: 0.2em; }
       .nav-toggle { display: flex; z-index: 51; }
 
-      .about-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
+      .nav-right { gap: 16px; }
 
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
       .about-visual { order: -1; }
-
       .about-ring { width: 220px; height: 220px; }
       .about-ring-num { font-size: 3.5rem; }
 
-      .location-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
+      .location-inner { grid-template-columns: 1fr; gap: 40px; }
       .map-wrap { height: 300px; }
     }
 
     @media (max-width: 600px) {
       section { padding: 72px 20px; }
-
       .services-grid { grid-template-columns: 1fr; }
-
       .about-stats { grid-template-columns: 1fr 1fr; }
-
       .guarantee-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
-
       .hero-cta { flex-direction: column; align-items: center; }
       .btn-primary, .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
@@ -677,41 +625,84 @@
   <!-- ─── NAVBAR ─── -->
   <nav aria-label="Навигация">
     <a href="#" class="nav-logo">Ювелирная Студия</a>
-    <button class="nav-toggle" aria-label="Открыть меню" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links" role="list">
-      <li><a href="#services" onclick="closeNav()">Услуги</a></li>
-      <li><a href="#about" onclick="closeNav()">О нас</a></li>
-      <li><a href="#location" onclick="closeNav()">Адрес</a></li>
-      <li><a href="#contact" onclick="closeNav()">Контакты</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#services" onclick="closeNav()" data-i18n="nav_services">Услуги</a></li>
+        <li><a href="#about" onclick="closeNav()" data-i18n="nav_about">О нас</a></li>
+        <li><a href="#location" onclick="closeNav()" data-i18n="nav_address">Адрес</a></li>
+        <li><a href="#contact" onclick="closeNav()" data-i18n="nav_contact">Контакты</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Язык / Тил">
+        <button class="lang-btn active" id="btn-ru" onclick="setLang('ru')" aria-label="Русский">RU</button>
+        <button class="lang-btn" id="btn-kg" onclick="setLang('kg')" aria-label="Кыргызча">KG</button>
+      </div>
+      <button class="nav-toggle" aria-label="Открыть меню" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- ─── HERO ─── -->
   <section class="hero" id="home" aria-label="Главная">
     <div class="logo-wrap">
-      <img src="logo.png" alt="Ювелирная Студия — логотип" class="logo-img" />
+      <img
+        src="logo.jpg"
+        alt="Ювелирная Студия логотип"
+        class="logo-img"
+        onerror="this.style.display='none'; document.getElementById('logo-svg-fallback').style.display='block';"
+      />
+      <!-- SVG fallback shown when logo.jpg is not yet added -->
+      <svg id="logo-svg-fallback" class="logo-svg-fallback" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Diamond outer -->
+        <polygon points="80,14 128,56 80,102 32,56" fill="none" stroke="#c9a050" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- Table (flat top) -->
+        <line x1="55" y1="35" x2="105" y2="35" stroke="#c9a050" stroke-width="2"/>
+        <!-- Crown facet lines -->
+        <line x1="55" y1="35" x2="32" y2="56" stroke="#c9a050" stroke-width="1.5"/>
+        <line x1="105" y1="35" x2="128" y2="56" stroke="#c9a050" stroke-width="1.5"/>
+        <line x1="80" y1="14" x2="55" y2="35" stroke="#c9a050" stroke-width="1.5"/>
+        <line x1="80" y1="14" x2="105" y2="35" stroke="#c9a050" stroke-width="1.5"/>
+        <!-- Girdle lines to culet -->
+        <line x1="32" y1="56" x2="80" y2="102" stroke="#c9a050" stroke-width="1.5"/>
+        <line x1="128" y1="56" x2="80" y2="102" stroke="#c9a050" stroke-width="1.5"/>
+        <line x1="55" y1="35" x2="80" y2="102" stroke="#c9a050" stroke-width="1" opacity="0.5"/>
+        <line x1="105" y1="35" x2="80" y2="102" stroke="#c9a050" stroke-width="1" opacity="0.5"/>
+        <!-- Horizontal girdle -->
+        <line x1="32" y1="56" x2="128" y2="56" stroke="#c9a050" stroke-width="1.5"/>
+        <!-- Left: torch handle crossing right-to-left downward -->
+        <path d="M110,135 L62,68" stroke="#c9a050" stroke-width="5" stroke-linecap="round"/>
+        <path d="M62,68 Q54,58 46,46" stroke="#c9a050" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <!-- Torch segments -->
+        <line x1="96" y1="114" x2="100" y2="108" stroke="#c9a050" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+        <line x1="86" y1="100" x2="90" y2="94" stroke="#c9a050" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+        <!-- Right: pliers pivot circle -->
+        <circle cx="98" cy="90" r="7" fill="none" stroke="#c9a050" stroke-width="2.5"/>
+        <!-- Pliers handle 1 -->
+        <line x1="90" y1="84" x2="42" y2="130" stroke="#c9a050" stroke-width="5" stroke-linecap="round"/>
+        <!-- Pliers handle 2 -->
+        <line x1="106" y1="96" x2="118" y2="135" stroke="#c9a050" stroke-width="5" stroke-linecap="round"/>
+        <!-- Pliers jaw tips (fork) -->
+        <line x1="90" y1="84" x2="78" y2="66" stroke="#c9a050" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="106" y1="96" x2="100" y2="70" stroke="#c9a050" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
     </div>
 
-    <h1 class="hero-title">Ювелирная<br/>Студия</h1>
-    <p class="hero-sub">Бишкек · 30 лет опыта</p>
-
+    <h1 class="hero-title" data-i18n="hero_title">Ювелирная<br/>Студия</h1>
+    <p class="hero-sub" data-i18n="hero_sub">Бишкек · 30 лет опыта</p>
     <div class="hero-divider" aria-hidden="true"></div>
-
-    <p class="hero-tagline">
+    <p class="hero-tagline" data-i18n="hero_tagline">
       Работаем быстро, аккуратно и с душой.<br/>
       Серебро и золото — 30 лет опыта, гарантированное качество.
     </p>
 
     <div class="hero-cta">
-      <a href="https://wa.me/996500455008" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
+      <a href="https://wa.me/996500455008" class="btn-primary" target="_blank" rel="noopener noreferrer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.523 5.845L0 24l6.335-1.5A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-4.992-1.365l-.358-.213-3.761.891.942-3.668-.233-.375A9.773 9.773 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-        Написать нам
+        <span data-i18n="cta_write">Написать нам</span>
       </a>
-      <a href="#location" class="btn-outline" aria-label="Узнать адрес">
+      <a href="#location" class="btn-outline">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Найти нас
+        <span data-i18n="cta_find">Найти нас</span>
       </a>
     </div>
   </section>
@@ -720,68 +711,65 @@
   <section id="services" aria-labelledby="services-heading">
     <div class="container">
       <header class="services-header">
-        <p class="section-label">Что мы делаем</p>
-        <h2 class="section-title" id="services-heading">Наши <em>услуги</em></h2>
+        <p class="section-label" data-i18n="services_label">Что мы делаем</p>
+        <h2 class="section-title" id="services-heading" data-i18n="services_title">Наши <em>услуги</em></h2>
         <div class="section-line" aria-hidden="true"></div>
       </header>
-
       <div class="services-grid">
         <article class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
           </svg>
-          <h3 class="service-name">Ремонт украшений</h3>
-          <p class="service-desc">Ремонт любой сложности: пайка, полировка, закрепка камней, восстановление формы и покрытия. Работаем с изделиями любого состояния.</p>
+          <h3 class="service-name" data-i18n="s1_name">Ремонт украшений</h3>
+          <p class="service-desc" data-i18n="s1_desc">Ремонт любой сложности: пайка, полировка, закрепка камней, восстановление формы и покрытия. Работаем с изделиями любого состояния.</p>
         </article>
 
         <article class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
           </svg>
-          <h3 class="service-name">Работа с серебром</h3>
-          <p class="service-desc">Ремонт, чистка и реставрация серебряных изделий. Восстанавливаем первоначальный блеск и красоту. Гарантия на все виды работ.</p>
+          <h3 class="service-name" data-i18n="s2_name">Работа с серебром</h3>
+          <p class="service-desc" data-i18n="s2_desc">Ремонт, чистка и реставрация серебряных изделий. Восстанавливаем первоначальный блеск и красоту. Гарантия на все виды работ.</p>
         </article>
 
         <article class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
           </svg>
-          <h3 class="service-name">Работа с золотом</h3>
-          <p class="service-desc">Ремонт и изготовление золотых украшений. Профессиональный подход, точность исполнения и высокое качество материалов.</p>
+          <h3 class="service-name" data-i18n="s3_name">Работа с золотом</h3>
+          <p class="service-desc" data-i18n="s3_desc">Ремонт и изготовление золотых украшений. Профессиональный подход, точность исполнения и высокое качество материалов.</p>
         </article>
 
         <article class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><path d="M8 12h8M12 8v8"/>
           </svg>
-          <h3 class="service-name">Украшения на заказ</h3>
-          <p class="service-desc">Индивидуальные украшения ручной работы — от эскиза до готового изделия. Воплощаем любые идеи в серебре и золоте.</p>
+          <h3 class="service-name" data-i18n="s4_name">Украшения на заказ</h3>
+          <p class="service-desc" data-i18n="s4_desc">Индивидуальные украшения ручной работы — от эскиза до готового изделия. Воплощаем любые идеи в серебре и золоте.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- ─── GUARANTEE STRIP ─── -->
-  <div class="guarantee" aria-label="Наши преимущества">
+  <div class="guarantee" aria-label="Преимущества">
     <div class="guarantee-inner">
       <div class="guarantee-item">
         <svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
         <div class="guarantee-text">
-          <strong>Гарантия качества</strong>
-          <span>На все виды работ</span>
+          <strong data-i18n="g1_title">Гарантия качества</strong>
+          <span data-i18n="g1_sub">На все виды работ</span>
         </div>
       </div>
       <div class="guarantee-item">
         <svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/>
-          <polyline points="12 6 12 12 16 14"/>
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
         </svg>
         <div class="guarantee-text">
-          <strong>Быстрое исполнение</strong>
-          <span>Срочный ремонт</span>
+          <strong data-i18n="g2_title">Быстрое исполнение</strong>
+          <span data-i18n="g2_sub">Срочный ремонт</span>
         </div>
       </div>
       <div class="guarantee-item">
@@ -789,8 +777,8 @@
           <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
         </svg>
         <div class="guarantee-text">
-          <strong>С любовью к делу</strong>
-          <span>Каждое украшение уникально</span>
+          <strong data-i18n="g3_title">С любовью к делу</strong>
+          <span data-i18n="g3_sub">Каждое украшение уникально</span>
         </div>
       </div>
     </div>
@@ -801,31 +789,31 @@
     <div class="container">
       <div class="about-inner">
         <div class="about-content">
-          <p class="section-label">О мастере</p>
+          <p class="section-label" data-i18n="about_label">О мастере</p>
           <h2 class="section-title" id="about-heading">Давлетяров <em>Улан</em></h2>
           <div class="section-line" aria-hidden="true"></div>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.85;">
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.85;" data-i18n="about_p1">
             Более 30 лет я занимаюсь ювелирным ремеслом. За эти годы через мои руки прошли тысячи украшений — каждое из которых несёт в себе историю и ценность для своего владельца.
           </p>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.85; margin-top: 16px;">
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.85; margin-top: 16px;" data-i18n="about_p2">
             Я работаю с серебром и золотом, берусь за задачи любой сложности — от простой полировки до полного восстановления изделия. Качество и честность — мои главные принципы.
           </p>
           <div class="about-stats">
             <div class="stat">
               <div class="stat-num">30+</div>
-              <div class="stat-label">Лет опыта</div>
+              <div class="stat-label" data-i18n="stat1">Лет опыта</div>
             </div>
             <div class="stat">
               <div class="stat-num">100%</div>
-              <div class="stat-label">Гарантия</div>
+              <div class="stat-label" data-i18n="stat2">Гарантия</div>
             </div>
             <div class="stat">
               <div class="stat-num">Au</div>
-              <div class="stat-label">Золото</div>
+              <div class="stat-label" data-i18n="stat3">Золото</div>
             </div>
             <div class="stat">
               <div class="stat-num">Ag</div>
-              <div class="stat-label">Серебро</div>
+              <div class="stat-label" data-i18n="stat4">Серебро</div>
             </div>
           </div>
         </div>
@@ -834,7 +822,7 @@
           <div class="about-ring">
             <div class="about-ring-text">
               <div class="about-ring-num">30</div>
-              <div class="about-ring-label">Лет опыта</div>
+              <div class="about-ring-label" data-i18n="ring_label">Лет опыта</div>
             </div>
           </div>
         </div>
@@ -847,8 +835,8 @@
     <div class="container">
       <div class="location-inner">
         <div class="location-info">
-          <p class="section-label">Где нас найти</p>
-          <h2 class="section-title" id="location-heading">Наш <em>адрес</em></h2>
+          <p class="section-label" data-i18n="loc_label">Где нас найти</p>
+          <h2 class="section-title" id="location-heading" data-i18n="loc_title">Наш <em>адрес</em></h2>
           <div class="section-line" aria-hidden="true"></div>
 
           <address class="location-address" style="font-style: normal;">
@@ -857,8 +845,8 @@
                 <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/>
               </svg>
               <div class="location-row-text">
-                <strong>Адрес</strong>
-                <span>ТЦ Аламедин Гранд<br/>0 этаж, бутик 33<br/>Бишкек, Кыргызстан</span>
+                <strong data-i18n="loc_addr_label">Адрес</strong>
+                <span data-i18n="loc_addr_val">ТЦ Аламедин Гранд<br/>0 этаж, бутик 33<br/>Бишкек, Кыргызстан</span>
               </div>
             </div>
 
@@ -867,10 +855,8 @@
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.05 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
               </svg>
               <div class="location-row-text">
-                <strong>Телефон</strong>
-                <a href="tel:+996500455008" style="color: var(--text); text-decoration: none; transition: color 200ms;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">
-                  +996 500 455 008
-                </a>
+                <strong data-i18n="loc_phone_label">Телефон</strong>
+                <a href="tel:+996500455008" style="text-decoration:none; transition: color 200ms;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">+996 500 455 008</a>
               </div>
             </div>
 
@@ -880,9 +866,7 @@
               </svg>
               <div class="location-row-text">
                 <strong>WhatsApp</strong>
-                <a href="https://wa.me/996500455008" target="_blank" rel="noopener noreferrer" style="color: var(--text); text-decoration: none; transition: color 200ms;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">
-                  Написать в WhatsApp
-                </a>
+                <a href="https://wa.me/996500455008" target="_blank" rel="noopener noreferrer" style="text-decoration:none; transition: color 200ms;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'" data-i18n="loc_wa_val">Написать в WhatsApp</a>
               </div>
             </div>
 
@@ -892,18 +876,16 @@
               </svg>
               <div class="location-row-text">
                 <strong>Instagram</strong>
-                <a href="https://www.instagram.com/yuvelirnaya.studia.kg" target="_blank" rel="noopener noreferrer" style="color: var(--text); text-decoration: none; transition: color 200ms;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">
-                  @yuvelirnaya.studia.kg
-                </a>
+                <a href="https://www.instagram.com/yuvelirnaya.studia.kg" target="_blank" rel="noopener noreferrer" style="text-decoration:none; transition: color 200ms;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">@yuvelirnaya.studia.kg</a>
               </div>
             </div>
           </address>
         </div>
 
-        <div class="map-wrap" aria-label="Карта расположения">
+        <div class="map-wrap" aria-label="Карта">
           <iframe
             src="https://maps.google.com/maps?q=ТЦ+Аламедин+Гранд+Бишкек&output=embed&z=16&hl=ru"
-            title="Расположение Ювелирной Студии на карте"
+            title="Расположение на карте"
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade">
@@ -917,15 +899,15 @@
   <section id="contact" aria-labelledby="contact-heading">
     <div class="container">
       <div class="contact-body">
-        <p class="section-label">Связаться с нами</p>
-        <h2 class="section-title" id="contact-heading">Напишите <em>нам</em></h2>
+        <p class="section-label" data-i18n="contact_label">Связаться с нами</p>
+        <h2 class="section-title" id="contact-heading" data-i18n="contact_title">Напишите <em>нам</em></h2>
         <div class="section-line" style="margin: 24px auto;" aria-hidden="true"></div>
-        <p>Готовы помочь с ремонтом вашего украшения. Напишите нам в WhatsApp — ответим быстро, проконсультируем бесплатно.</p>
-        <a href="https://wa.me/996500455008" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
+        <p data-i18n="contact_body">Готовы помочь с ремонтом вашего украшения. Напишите нам в WhatsApp — ответим быстро, проконсультируем бесплатно.</p>
+        <a href="https://wa.me/996500455008" class="wa-btn" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.523 5.845L0 24l6.335-1.5A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-4.992-1.365l-.358-.213-3.761.891.942-3.668-.233-.375A9.773 9.773 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
           </svg>
-          Написать в WhatsApp
+          <span data-i18n="wa_btn">Написать в WhatsApp</span>
         </a>
       </div>
     </div>
@@ -935,22 +917,134 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">Ювелирная Студия</div>
-      <p class="footer-copy">ТЦ Аламедин Гранд, 0 этаж, бутик 33 · Бишкек, Кыргызстан</p>
-      <p class="footer-copy" style="margin-top: 4px;">© 2024 Ювелирная Студия · Давлетяров Улан</p>
+      <p class="footer-copy" data-i18n="footer_addr">ТЦ Аламедин Гранд, 0 этаж, бутик 33 · Бишкек, Кыргызстан</p>
+      <p class="footer-copy">© 2024 Ювелирная Студия · Давлетяров Улан</p>
     </div>
   </footer>
 
   <script>
+    /* ─── TRANSLATIONS ─── */
+    const t = {
+      ru: {
+        nav_services:   'Услуги',
+        nav_about:      'О нас',
+        nav_address:    'Адрес',
+        nav_contact:    'Контакты',
+        hero_title:     'Ювелирная<br/>Студия',
+        hero_sub:       'Бишкек · 30 лет опыта',
+        hero_tagline:   'Работаем быстро, аккуратно и с душой.<br/>Серебро и золото — 30 лет опыта, гарантированное качество.',
+        cta_write:      'Написать нам',
+        cta_find:       'Найти нас',
+        services_label: 'Что мы делаем',
+        services_title: 'Наши <em>услуги</em>',
+        s1_name:        'Ремонт украшений',
+        s1_desc:        'Ремонт любой сложности: пайка, полировка, закрепка камней, восстановление формы и покрытия. Работаем с изделиями любого состояния.',
+        s2_name:        'Работа с серебром',
+        s2_desc:        'Ремонт, чистка и реставрация серебряных изделий. Восстанавливаем первоначальный блеск и красоту. Гарантия на все виды работ.',
+        s3_name:        'Работа с золотом',
+        s3_desc:        'Ремонт и изготовление золотых украшений. Профессиональный подход, точность исполнения и высокое качество материалов.',
+        s4_name:        'Украшения на заказ',
+        s4_desc:        'Индивидуальные украшения ручной работы — от эскиза до готового изделия. Воплощаем любые идеи в серебре и золоте.',
+        g1_title:       'Гарантия качества',
+        g1_sub:         'На все виды работ',
+        g2_title:       'Быстрое исполнение',
+        g2_sub:         'Срочный ремонт',
+        g3_title:       'С любовью к делу',
+        g3_sub:         'Каждое украшение уникально',
+        about_label:    'О мастере',
+        about_p1:       'Более 30 лет я занимаюсь ювелирным ремеслом. За эти годы через мои руки прошли тысячи украшений — каждое из которых несёт в себе историю и ценность для своего владельца.',
+        about_p2:       'Я работаю с серебром и золотом, берусь за задачи любой сложности — от простой полировки до полного восстановления изделия. Качество и честность — мои главные принципы.',
+        stat1:          'Лет опыта',
+        stat2:          'Гарантия',
+        stat3:          'Золото',
+        stat4:          'Серебро',
+        ring_label:     'Лет опыта',
+        loc_label:      'Где нас найти',
+        loc_title:      'Наш <em>адрес</em>',
+        loc_addr_label: 'Адрес',
+        loc_addr_val:   'ТЦ Аламедин Гранд<br/>0 этаж, бутик 33<br/>Бишкек, Кыргызстан',
+        loc_phone_label:'Телефон',
+        loc_wa_val:     'Написать в WhatsApp',
+        contact_label:  'Связаться с нами',
+        contact_title:  'Напишите <em>нам</em>',
+        contact_body:   'Готовы помочь с ремонтом вашего украшения. Напишите нам в WhatsApp — ответим быстро, проконсультируем бесплатно.',
+        wa_btn:         'Написать в WhatsApp',
+        footer_addr:    'ТЦ Аламедин Гранд, 0 этаж, бутик 33 · Бишкек, Кыргызстан',
+      },
+      kg: {
+        nav_services:   'Кызматтар',
+        nav_about:      'Биз жөнүндө',
+        nav_address:    'Дарек',
+        nav_contact:    'Байланыш',
+        hero_title:     'Зергерлик<br/>Студия',
+        hero_sub:       'Бишкек · 30 жыл тажрыйба',
+        hero_tagline:   'Тез, так жана жүрөктөн иштейбиз.<br/>Күмүш жана алтын — 30 жыл тажрыйба, сапат кепилдиги менен.',
+        cta_write:      'Бизге жазыңыз',
+        cta_find:       'Бизди табыңыз',
+        services_label: 'Биз эмне кылабыз',
+        services_title: 'Биздин <em>кызматтар</em>',
+        s1_name:        'Зергерлик буюмдарды оңдоо',
+        s1_desc:        'Каалаган татаалдыктагы оңдоо: пайкалоо, жылтыратуу, таш коюу, форманы калыбына келтирүү. Каалаган абалдагы буюмдар менен иштейбиз.',
+        s2_name:        'Күмүш менен иш',
+        s2_desc:        'Күмүш буюмдарды оңдоо, тазалоо жана реставрациялоо. Баштапкы жаркырагысын жана сулуулугун калыбына келтиребиз. Бардык иш түрлөрүнө кепилдик.',
+        s3_name:        'Алтын менен иш',
+        s3_desc:        'Алтын зергерлик буюмдарды оңдоо жана жасоо. Профессионалдык мамиле, так аткаруу жана жогорку сапаттагы материалдар.',
+        s4_name:        'Заказ боюнча зергерлик',
+        s4_desc:        'Колдон жасалган жеке зергерлик буюмдар — эскизден бүткөн буюмга чейин. Каалаган идеяны күмүш жана алтында жүзөгө ашырабыз.',
+        g1_title:       'Сапат кепилдиги',
+        g1_sub:         'Бардык иш түрлөрүнө',
+        g2_title:       'Тез аткаруу',
+        g2_sub:         'Шашылыш оңдоо',
+        g3_title:       'Ишке сүйүү менен',
+        g3_sub:         'Ар бир буюм уникалдуу',
+        about_label:    'Чебер жөнүндө',
+        about_p1:       '30 жылдан ашык мен зергерлик кесип менен алектенем. Бул жылдар ичинде менин колумдан миңдеген буюмдар өттү — алардын ар бири өз ээси үчүн тарых жана баалуулук алып жүрөт.',
+        about_p2:       'Мен күмүш жана алтын менен иштейм, каалаган татаалдыктагы тапшырмаларды кабыл алам — жөнөкөй жылтыратуудан баштап буюмду толугу менен калыбына келтирүүгө чейин. Сапат жана чынчылдык — менин негизги принциптерим.',
+        stat1:          'Жыл тажрыйба',
+        stat2:          'Кепилдик',
+        stat3:          'Алтын',
+        stat4:          'Күмүш',
+        ring_label:     'Жыл тажрыйба',
+        loc_label:      'Бизди кайдан табасыз',
+        loc_title:      'Биздин <em>дарек</em>',
+        loc_addr_label: 'Дарек',
+        loc_addr_val:   'Аламедин Гранд СБ<br/>0 кабат, 33 бутик<br/>Бишкек, Кыргызстан',
+        loc_phone_label:'Телефон',
+        loc_wa_val:     'WhatsApp\'та жазыңыз',
+        contact_label:  'Биз менен байланышыңыз',
+        contact_title:  'Бизге <em>жазыңыз</em>',
+        contact_body:   'Зергерлик буюмуңузду оңдоого жардам берүүгө даярбыз. WhatsApp\'та жазыңыз — тез жооп беребиз, акысыз кеңешебиз.',
+        wa_btn:         'WhatsApp\'та жазыңыз',
+        footer_addr:    'Аламедин Гранд СБ, 0 кабат, 33 бутик · Бишкек, Кыргызстан',
+      }
+    };
+
+    let currentLang = 'ru';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+      document.getElementById('btn-kg').classList.toggle('active', lang === 'kg');
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[lang][key] !== undefined) {
+          el.innerHTML = t[lang][key];
+        }
+      });
+    }
+
+    /* ─── NAV TOGGLE ─── */
     function toggleNav() {
-      const nav = document.getElementById('nav-links');
-      nav.classList.toggle('open');
+      document.getElementById('nav-links').classList.toggle('open');
     }
 
     function closeNav() {
       document.getElementById('nav-links').classList.remove('open');
     }
 
-    // Close nav on outside click
     document.addEventListener('click', function(e) {
       const nav = document.getElementById('nav-links');
       const toggle = document.querySelector('.nav-toggle');
