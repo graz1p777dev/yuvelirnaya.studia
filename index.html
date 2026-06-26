@@ -561,6 +561,31 @@
 
     .footer-copy { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.05em; }
 
+    .footer-dev {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: border-color 200ms, color 200ms;
+    }
+
+    .footer-dev span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .footer-dev:hover {
+      border-color: var(--gold);
+      color: var(--text);
+    }
+
     /* ─── MOBILE NAV TOGGLE ─── */
     .nav-toggle {
       display: none;
@@ -982,6 +1007,9 @@
       <div class="footer-logo">Ювелирная Студия</div>
       <p class="footer-copy" data-i18n="footer_addr">ТЦ Аламедин Гранд, 0 этаж, бутик 33 · Бишкек, Кыргызстан</p>
       <p class="footer-copy">© 2024 Ювелирная Студия · Давлетяров Улан</p>
+      <a href="https://alihan-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" class="footer-dev">
+        Разработка сайта — <span>Alihan</span>
+      </a>
     </div>
   </footer>
 
